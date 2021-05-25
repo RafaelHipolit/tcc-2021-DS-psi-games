@@ -67,7 +67,7 @@ if(isset($_SESSION['idJogador'])){
 
       <nav>
         <ul>
-          <li><a href="index">HOME</a></li>
+          <li><a href="../../index">HOME</a></li>
           <li><a href="procurajogo">JOGOS</a></li>
           <li><a href="">INFO</a></li>
         </ul>
