@@ -22,7 +22,7 @@ if(isset($_SESSION['idJogador'])){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PSI GAMES</title>
 
-  <link rel="stylesheet" href="../css/cssGeral.css">
+  <link rel="stylesheet" href="src/css/cssGeral.css">
 
 </head>
 
@@ -36,7 +36,7 @@ if(isset($_SESSION['idJogador'])){
         <h1 id="logo">| 𝜓 〉GAMES</h1>
 
         <div id="barprocura-pc">
-          <form action="procurajogo.php" method="get" class="formbarproc">
+          <form action="src/play/procurajogo.php" method="get" class="formbarproc">
             <input class="inputtext" type="text" name="n">
             <input type="submit" style="display: none;">
           </form>
@@ -56,7 +56,7 @@ if(isset($_SESSION['idJogador'])){
       </div>
 
       <div id="barprocura-mobile">
-        <form action="procurajogo.php" method="get" class="formbarproc">
+        <form action="src/play/procurajogo.php" method="get" class="formbarproc">
           <input class="inputtext" type="text" name="n">
           <input type="submit" style="display: none;">
         </form>
@@ -67,8 +67,8 @@ if(isset($_SESSION['idJogador'])){
 
       <nav>
         <ul>
-          <li><a href="index">HOME</a></li>
-          <li><a href="procurajogo">JOGOS</a></li>
+          <li><a href="">HOME</a></li>
+          <li><a href="src/play/procurajogo">JOGOS</a></li>
           <li><a href="">INFO</a></li>
         </ul>
       </nav>
@@ -115,8 +115,8 @@ if(isset($_SESSION['idJogador'])){
   <div id="menulateral">
     <nav>
       <ul>
-        <li><a href="index.php">HOME</a></li>
-        <li><a href="procurajogo.php">JOGOS</a></li>
+        <li><a href="">HOME</a></li>
+        <li><a href="src/play/procurajogo.php">JOGOS</a></li>
         <li><a href="">INFO</a></li>
       </ul>
     </nav>
@@ -133,7 +133,7 @@ if(isset($_SESSION['idJogador'])){
     $msgLogado = "Olá ". $jogadorNome. "<br><br> Clique aqui para entrar no seu perfil";
     $msgNaoLogado = "Você não esta logado <br><br> Clique aqui para <br> Entrar na sua conta <br> ou criar uma";
     ?>
-    <a href="formlogin.php"> <?php if($jogadorLogado){ echo $msgLogado; } else { echo $msgNaoLogado; } ?> </a>
+    <a href="src/play/formlogin.php"> <?php if($jogadorLogado){ echo $msgLogado; } else { echo $msgNaoLogado; } ?> </a>
 
     <div id="loginlateral-fechar">
       FECHAR <br> MENU <br> LATERAL
