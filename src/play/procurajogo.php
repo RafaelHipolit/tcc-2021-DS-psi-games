@@ -90,8 +90,8 @@ $result = $con->executQuery($query);
 
       <nav>
         <ul>
-          <li><a href="index.php">HOME</a></li>
-          <li><a href="procurajogo.php">JOGOS</a></li>
+          <li><a href="">HOME</a></li>
+          <li><a href="../../procurajogo.php">JOGOS</a></li>
           <li><a href="">INFO</a></li>
         </ul>
       </nav>
