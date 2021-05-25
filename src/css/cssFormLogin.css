@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* FONTE ROBOTO MONO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+/* FONTE ROBOTO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --robotoMonoFont: 'Roboto Mono', monospace, sans-serif;
+    --robotoFont: 'Roboto', monospace, sans-serif;
+}
+
+#formLogin{
+    max-width: 480px;
+
+    max-height: auto;
+    margin: 50px auto;
+    padding: 20px 15px;
+    border: rgb(76, 86, 175) solid 4px;
+    border-radius: 2px;
+
+}
+
+#formLogin label{
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+#formLogin .lblinput{
+    display: block;
+    font-size: 20px;
+    margin-top: 8px;
+    width: 90%;
+}
+
+#formLogin h1{
+    font-family: var(--robotoMonoFont);
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+#btnLogar{
+    display: block;
+    float: right;
+    background-color: rgb(76, 86, 175);
+    width: 100px;
+    height: 40px;
+    margin: 30px 40px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btnLogar:hover{
+    border: white solid 2px;
+}
+
+#criarConta{
+    margin-top: 130px;
+    display: block;
+    font-size: 20px;
+    color: white;
+}

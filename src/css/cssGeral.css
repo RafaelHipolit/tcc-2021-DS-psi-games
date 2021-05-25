@@ -1,0 +1,341 @@
+@charset "UTF-8";
+/* FONTE ROBOTO MONO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+/* FONTE ROBOTO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --robotoMonoFont: 'Roboto Mono', monospace, sans-serif;
+    --robotoFont: 'Roboto', monospace, sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    font-family: var(--robotoFont);
+}
+
+h1 {
+    margin: 0px;
+}
+
+/*DESKTOP*/
+
+#backHeader {
+    background-color: rgb(21, 21, 21);
+}
+
+header {
+    margin: 0px auto;
+    width: 80%;
+    padding-top: 3px;
+}
+
+#headerbar {
+    height: 50px;
+    width: calc(100% - 20px);
+    margin: 5px 10px;
+}
+
+#btnmenu-mobile{
+    display: none;
+}
+
+#logo {
+    height: 45px;
+    float: left;
+    font-size: 34px;
+}
+#logo img{
+    height: 45px;
+}
+
+#barprocura-pc {
+    width: calc(100% - 550px);
+    height: 40px;
+    margin: 0px 20px;
+    padding-left: 15px;
+    float: left;
+    background-color: white;
+    border: white solid 3px;
+    border-radius: 25px;
+}
+
+.formbarproc {
+    display: block;
+    width: auto;
+    padding: 0px;
+    margin: 0px;
+}
+
+.inputtext {
+    height: 40px;
+    width: calc(100% - 40px);
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    font-size: 30px;
+    border: none;
+}
+
+.btnsubmit {
+    width: 40px;
+    height: 40px;
+    float: right;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    border: black solid 3px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btnsubmit .lupa {
+    padding: 0px;
+    margin: 0px;
+    height: 28px;
+}
+
+#btnlogin-pc {
+    height: 40px;
+    float: right;
+    font-size: 32px;
+    width: 200px;
+    border: white solid 3px;
+    border-radius: 25px;
+    text-align: center;
+}
+#btnlogin-pc a{
+    text-decoration: none;
+    color: white;
+}
+
+#btnlogin-mobile {
+    display: none;
+}
+
+#barprocura-mobile {
+    display: none;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+}
+
+header nav li {
+    display: inline-block;
+}
+
+header nav li a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 10px;
+}
+
+#backMain {
+    background-color: rgba(10, 10, 10, 0.897);
+}
+
+main {
+    padding-top: 20px;
+    margin: 0px auto;
+    width: 80%;
+    min-height: 720px;
+    overflow: auto;
+}
+
+#caixa {
+    background-color: rgb(219, 60, 206);
+    width: 100%;
+    height: 50px;
+}
+
+footer{
+    display: block;
+    background-color: rgb(76, 86, 175);
+    width: 100%;
+    height: 300px;
+    
+}
+
+footer a{
+    display: block;
+    margin: 0px auto;
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+
+}
+
+#menulateral{
+    display: none;
+}
+#menulateral-fechar{
+    display: none;
+}
+#loginlateral{
+    display: none;
+}
+#loginlateral-fechar{
+    display: none;
+}
+
+
+
+/*SMARTPHONE e TABLET*/
+
+@media screen and (max-width: 1080px) {
+    header {
+        width: 100%;
+    }
+
+    #barprocura-pc {
+        display: none;
+    }
+
+    #barprocura-mobile {
+        display: block;
+        
+        width: calc(100% - 50px);
+        height: 40px;
+        margin: 5px 20px;
+        padding-left: 15px;
+        float: left;
+        background-color: white;
+        border: white solid 3px;
+        border-radius: 25px;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    /*SMARTPHONE*/
+    @media screen and (max-width: 460px) {
+
+        header{
+            height: 120px;
+        }
+
+        /*menu lateral*/
+        #btnmenu-mobile{
+            display: block;
+            height: 40px;
+            float: left;
+            font-size: 40px;
+            width: 50px;
+        }
+
+        header nav{
+            display: none;
+        }
+
+        #menulateral{
+            display: block;
+
+            position: fixed;
+            width: 70%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgb(185, 185, 185);
+        }    
+        #menulateral-fechar{
+            display: block;
+
+            position: fixed;
+            width: 30%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            padding-top: 10px;
+            text-align: center;
+            text-shadow: 0px 0px 10px black;
+            background-color: rgba(0, 0, 0, 0.288);
+        }
+
+        #menulateral ul{
+            list-style: none;
+            padding: 0px;
+        }
+
+        #menulateral a{
+            display: block;
+            text-decoration: none;
+            width: 90%;
+            margin: 10px auto; 
+            padding: 10px 0px;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 2px;
+            color: black;
+            font-family: var(--robotoMonoFont);
+        }
+
+
+        /*Login lateral*/
+        #btnlogin-pc{
+            display: none;
+        }
+        
+        #btnlogin-mobile{
+            display: block;
+
+            height: 40px;
+            float: right;
+            
+            width: 40px;
+            border: white solid 3px;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        #loginlateral{
+            display: block;
+
+            position: fixed;
+            width: 70%;
+            height: 100%;
+            right: 0;
+            top: 0;
+            background-color: rgb(185, 185, 185);
+        }    
+        #loginlateral a{
+            display: block;
+            text-decoration: none;
+            width: 90%;
+            height: 400px;
+            margin: 10px auto; 
+            padding: 10px 0px;
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 2px;
+            color: black;
+            font-family: var(--robotoMonoFont);
+        }
+
+        #loginlateral-fechar{
+            display: block;
+
+            position: fixed;
+            width: 30%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            padding-top: 10px;
+            text-align: center;
+            text-shadow: 0px 0px 10px black;
+            background-color: rgba(0, 0, 0, 0.288);
+        }
+        
+    }
+
+}
+

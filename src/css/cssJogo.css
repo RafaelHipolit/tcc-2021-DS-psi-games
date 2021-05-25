@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/* FONTE ROBOTO MONO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+/* FONTE ROBOTO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --robotoMonoFont: 'Roboto Mono', monospace, sans-serif;
+    --robotoFont: 'Roboto', monospace, sans-serif;
+}
+
+
+#img-jogo img{
+    border-top: 10px solid rgb(76, 86, 175);
+    width: 100%;
+}
+
+#info-main{
+    width: 100%;
+    overflow: auto;
+}
+
+#dados{
+    font-size: 25px;
+}
+
+#nome{
+    width: 100%;
+    padding: 10px 0px;
+    font-family: var(--robotoMonoFont);
+    font-size: 55px;
+    border-bottom: 5px solid rgb(76, 86, 175);
+}
+
+#preco{
+    width: auto;
+    font-size: 45px;
+    color: rgb(0, 196, 0);
+    padding: 10px;
+    float: left;
+}
+#add-car{
+    display: block;
+    width: 220px;
+    padding: 20px;
+    font-size: 30px;
+    background-color: rgb(0, 196, 0);
+    font-family: var(--robotoMonoFont);
+    float: right;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+#add-car:hover{   
+    background-color: rgb(19, 139, 19);
+
+}
+#adquirido{
+    width: 200px;
+    padding: 20px;
+    font-size: 30px;
+    background-color: rgb(0, 3, 196);
+    font-family: var(--robotoMonoFont);
+    float: right;
+}
+#jogo-em-car{
+    width: 220px;
+    padding: 20px;
+    font-size: 30px;
+    background-color: rgb(255, 251, 0);
+    color: #000;
+    font-family: var(--robotoMonoFont);
+    float: right;
+}
+#nao-logado{
+    width: 320px;
+    padding: 10px;
+    font-size: 25px;
+    background-color: rgb(99, 99, 99);
+    font-family: var(--robotoMonoFont);
+    float: right;
+}
+.item-info{
+    padding: 20px 0px;
+}

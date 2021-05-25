@@ -1,0 +1,110 @@
+@charset "UTF-8";
+/* FONTE ROBOTO MONO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+/* FONTE ROBOTO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --robotoMonoFont: 'Roboto Mono', monospace, sans-serif;
+    --robotoFont: 'Roboto', monospace, sans-serif;
+}
+
+#bar-procura-jogos{
+    width: calc(100% - 100px);
+    height: 40px;
+    margin: 50px 20px;
+    padding-left: 15px;
+    background-color: white;
+    border: white solid 3px;
+    border-radius: 25px;
+}
+
+#bar-procura-jogos .btnsubmit{
+    width: 200px;
+    font-size: 32px;
+}
+
+#bar-procura-jogos .inputtext{
+    width: calc(100% - 200px);
+}
+
+
+.jogo{
+    width: calc(100% - 10px);
+    height: 100px;
+    overflow: auto  ;
+    margin: 15px 5px;
+    background-color:rgba(32, 29, 34, 0.897);
+    font-size: 20px;
+    border-bottom:  3px solid white;
+    cursor: pointer;
+}
+.jogo:hover{
+    box-shadow: 0 0 10px rgb(153, 153, 153);
+}
+
+.jogo img{
+    display: block;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    float: left;
+}
+.jogo #nome{
+    width: calc(100% - 470px);
+    margin: 10px;
+    overflow: auto;
+    float: left;
+    font-size: 35px;
+}
+.jogo #system{
+    width: 100px;
+    margin: 10px;
+    float: right;
+}
+.jogo #preco{
+    width: 190px;
+    height: 75px;
+    background-color: rgb(0, 196, 0); /*rgb(0, 3, 196)*/
+    padding-top: 25px;
+    text-align: center;
+    float: right;
+    font-size: 30px;
+    font-family: var(--robotoMonoFont);
+}
+#preco-mobile{
+    display: none;
+}
+
+@media screen and (max-width: 1080px){
+    #bar-procura-jogos {
+        display: none; 
+    }
+
+    .jogo{
+        height: auto;
+        margin-top: 50px;
+    }
+
+    .jogo *{
+        float: none !important;
+        width: 100% !important;
+        height: auto !important;       
+    }
+
+    .jogo #preco{ 
+        display: none;
+    }
+    .jogo #preco-mobile{
+        display: block;
+        height: 75px !important;
+        width: 170px;
+        background-color: rgb(0, 196, 0); /*rgb(0, 3, 196)*/
+        padding-top: 25px;
+        text-align: center;
+        float: right;
+        font-size: 30px;
+        font-family: var(--robotoMonoFont);
+    }
+
+}

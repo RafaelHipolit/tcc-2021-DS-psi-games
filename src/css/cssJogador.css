@@ -1,0 +1,207 @@
+@charset "UTF-8";
+/* FONTE ROBOTO MONO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+/* FONTE ROBOTO */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+    --robotoMonoFont: 'Roboto Mono', monospace, sans-serif;
+    --robotoFont: 'Roboto', monospace, sans-serif;
+}
+
+#gabiarra{
+    width: 100%;
+    height: 80px;
+}
+
+#back-profile{
+    width: 100%;
+    /*usar overflow: auto; ao inves de height para ajustar o tamanho de acordo com os componentes internos(funcioa mesmo com float nos componentes)*/
+    overflow: auto;
+    background-color: rgba(10, 10, 10, 0.897);
+    border-bottom: rgb(76, 86, 175) solid 7px;
+
+}
+#profile{
+    width: 80%;
+    overflow: auto;
+    margin: 0px auto;
+}
+
+#perfilIcon{
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    margin-right: 50px;
+    float: left;
+}
+#dados{
+    width: calc(100% - 300px);
+    overflow: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.btn{
+    display: block;
+    background-color: rgb(76, 86, 175);
+    width: auto;
+    height: 40px;
+    padding: 2px 5px;
+    margin-top: 20px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+.btn:hover{
+    border: white solid 2px;
+}
+
+#btn-editar{
+    float: left;
+}
+
+#btn-logout{
+    float: right;
+}
+
+
+.car-titulo{
+    background-color: rgb(35, 35, 35);
+    font-size: 35px;
+    position: absolute;
+    margin-left: 30px;
+    padding: 0px 5px;
+    color: rgb(76, 86, 175);
+}
+
+#jogos{
+    width: calc(100% - 8px);  
+    overflow: auto;
+    margin-top: 25px;
+    border: rgb(76, 86, 175) solid 4px;
+    border-radius: 2px;
+}
+
+.jogo{
+    width: 100%;
+    height: 100px;
+    margin-top: 15px;
+    background-color:rgba(32, 29, 34, 0.897);
+    border-bottom:  3px solid white;
+    cursor: pointer;
+}
+
+.jogo img{
+    display: block;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    float: left;
+}
+.jogo-nome{
+    width: calc(100% - 500px);
+    margin: 10px;
+    overflow: auto;
+    float: left;
+    font-size: 30px;
+}
+.jogo-preco{
+    color: rgb(0, 196, 0);
+    width: 100px;
+    margin: 10px;
+    float: left;
+    font-size: 30px;
+}
+.jogo-remover{
+    display: block;
+    width: 190px;
+    height: 75px;
+    background-color: rgb(255, 0, 0); /*rgb(0, 3, 196)*/
+    padding-top: 25px;
+    text-align: center;
+    float: right;
+    font-size: 30px;
+    font-family: var(--robotoMonoFont);
+    color: white;
+    text-decoration: none;
+}
+
+#carrinho-atual{
+    width: calc(100% - 8px);  
+    overflow: auto;
+    margin-top: 25px;
+    border: rgb(76, 86, 175) solid 4px;
+    border-radius: 2px;
+}
+.finalizar{
+    font-size: 30px;
+    margin-top: 15px;
+}
+#btn-finalizar{
+    display: block;
+    width: 100%;
+    font-family: var(--robotoMonoFont);
+    padding: 20px 0px;
+    background-color: rgb(0, 196, 0);
+    font-size: 35px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+#carrinhos-ant{
+    border-top: white solid 5px;
+    border-bottom: white solid 5px;
+    padding: 15px 0px;
+}
+.cars-ant{
+    width: calc(100% - 8px);  
+    overflow: auto;
+    margin: 25px 0px;
+    border: rgb(76, 86, 175) solid 4px;
+    border-radius: 2px;
+}
+
+
+
+/*SMARTPHONE e TABLET*/
+@media screen and (max-width: 1080px){
+    #profile{
+        width: calc(100% - 20px);
+        margin: 0px 10px;
+    }
+    #perfilIcon{
+        display: none;
+    }
+    #dados{
+        width: 100%;
+    }
+
+
+    .jogo{
+        height: auto;
+        margin-top: 50px;
+    }
+
+    .jogo *{
+        float: none !important;
+        width: 100% !important;
+        height: auto !important;       
+    }
+
+    .jogo-remover{
+        padding-bottom: 25px;
+    }
+
+    #carrinhos-ant .car-titulo{
+        position: relative;
+        margin-left: 0px;
+        padding: 0px 5px;
+    }
+
+}
