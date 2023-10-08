@@ -36,7 +36,7 @@ $con->executQuery($query);
 $_SESSION['nickname'] = $novoNickname;
 
 if(isset($_POST['ALTSENHA'])){
-    $novoSenha = mysqli_real_escape_string($con->getConexao(), $_POST['senha']);
+    $novoSenha = mysqli_real_escape_string($con->getConexao(), md5($_POST['senha']));
     $query = "update jogadores set senha = '$novoSenha' where pk_id_jogador = $id;";
     $con->executQuery($query);
 }

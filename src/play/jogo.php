@@ -31,6 +31,11 @@ if(mysqli_num_rows($result) == 0){
 
 $dados = mysqli_fetch_assoc($result);
 
+function dataFormatoBr($data){
+    $dataArray = explode("-",$data);
+    return $dataArray[2]."/".$dataArray[1]."/".$dataArray[0];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +59,7 @@ $dados = mysqli_fetch_assoc($result);
 
         <div id="btnmenu-mobile">≡</div>
 
-        <h1 id="logo"><img src="../img/psigames_logo.png" alt=""></h1>
+        <img id="logo" src="../img/logo_psiGAMES.png" alt="PSI GAMES">
 
         <div id="barprocura-pc">
           <form action="procurajogo.php" method="get" class="formbarproc">
@@ -90,7 +95,6 @@ $dados = mysqli_fetch_assoc($result);
         <ul>
           <li><a href="index.php">HOME</a></li>
           <li><a href="procurajogo.php">JOGOS</a></li>
-          <li><a href="">INFO</a></li>
         </ul>
       </nav>
 
@@ -100,7 +104,7 @@ $dados = mysqli_fetch_assoc($result);
   <div id="backMain">
     <main>
       <!-- Main =========================================== -->
-      <div id="img-jogo"><img src="../img/img_jogo_modelo.png" alt="NOT FOUND"></div>
+      <div id="img-jogo"><img src="../img-games/<?php echo $dados['pk_id_jogo'] ?>.png" alt="NOT FOUND"></div>
       <div id="dados">
 
         <div id="info-main">
@@ -174,15 +178,17 @@ $dados = mysqli_fetch_assoc($result);
         </div>
        
         <div id="system" class="item-info">Sistema: <?php echo $dados['sistema']; ?></div>
-        <div id="requisitos" class="item-info">
-            Requisitos: <br>
-            <?php echo $dados['requisitos']; ?>
-        </div>
         <div id="desc" class="item-info">
            Descrição: <br>
           <?php echo $dados['descricao']; ?>
         </div>
-        <div id="lanc" class="item-info" >Lancado em: <?php echo $dados['data_lancamento']; ?></div>
+        <div id="requisitos" class="item-info">
+            Requisitos: <br>
+            <textarea readonly disabled><?php echo $dados['requisitos']; ?></textarea>
+            
+        </div>
+        
+        <div id="lanc" class="item-info" >Lancado em: <?php echo dataFormatoBr($dados['data_lancamento']); ?></div>
       </div>
       
 

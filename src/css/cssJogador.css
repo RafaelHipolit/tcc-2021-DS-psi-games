@@ -103,7 +103,6 @@
     float: left;
 }
 .jogo-nome{
-    width: calc(100% - 500px);
     margin: 10px;
     overflow: auto;
     float: left;

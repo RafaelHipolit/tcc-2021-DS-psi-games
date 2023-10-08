@@ -99,7 +99,7 @@ if(isset($_SESSION['idJogador'])){
 
         <div id="btnmenu-mobile">≡</div>
 
-        <h1 id="logo">| 𝜓 〉GAMES</h1>
+        <img id="logo" src="../img/logo_psiGAMES.png" alt="PSI GAMES">
 
         <div id="barprocura-pc">
           <form action="procurajogo.php" method="get" class="formbarproc">
@@ -135,7 +135,6 @@ if(isset($_SESSION['idJogador'])){
         <ul>
           <li><a href="index.php">HOME</a></li>
           <li><a href="procurajogo.php">JOGOS</a></li>
-          <li><a href="">INFO</a></li>
         </ul>
       </nav>
 
@@ -162,7 +161,6 @@ if(isset($_SESSION['idJogador'])){
       <ul>
         <li><a href="index.php">HOME</a></li>
         <li><a href="procurajogo.php">JOGOS</a></li>
-        <li><a href="">INFO</a></li>
       </ul>
     </nav>
 

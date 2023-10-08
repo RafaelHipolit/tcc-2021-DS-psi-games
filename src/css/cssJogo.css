@@ -84,3 +84,13 @@
 .item-info{
     padding: 20px 0px;
 }
+
+#requisitos textarea{
+    width: 100%;
+    resize: none;
+    height: 220px;
+    background-color: rgba(37, 37, 37, 0.897);
+    color: white;
+    font-family: var(--robotoFont);
+    font-size: 20px;
+}

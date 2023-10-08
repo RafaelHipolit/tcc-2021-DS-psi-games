@@ -33,7 +33,7 @@ if(isset($_SESSION['idJogador'])){
 
         <div id="btnmenu-mobile">≡</div>
 
-        <h1 id="logo">| 𝜓 〉GAMES</h1>
+        <img id="logo" src="../img/logo_psiGAMES.png" alt="PSI GAMES">
 
         <div id="barprocura-pc">
           <form action="procurajogo.php" method="get" class="formbarproc">
@@ -67,9 +67,8 @@ if(isset($_SESSION['idJogador'])){
 
       <nav>
         <ul>
-          <li><a href="../../index">HOME</a></li>
-          <li><a href="procurajogo">JOGOS</a></li>
-          <li><a href="">INFO</a></li>
+          <li><a href="index.php">HOME</a></li>
+          <li><a href="procurajogo.php">JOGOS</a></li>
         </ul>
       </nav>
 
@@ -78,30 +77,9 @@ if(isset($_SESSION['idJogador'])){
 
   <div id="backMain">
     <main>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas accusamus mollitia, commodi enim doloribus ipsum? Assumenda optio dignissimos necessitatibus quod blanditiis beatae iure quibusdam inventore tempora veritatis! Error, modi praesentium.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, dolorum doloribus, ad amet suscipit vel corporis blanditiis placeat incidunt dignissimos, nam fuga aspernatur doloremque impedit eius recusandae cum nihil officia.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-      <br><br><br><br><br><br><br><br><br><br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, sint! Fugiat, autem velit? Quo temporibus fugiat officia possimus modi autem reiciendis dolores, iusto beatae, asperiores ut necessitatibus incidunt hic nobis.
-        
-      <div id="caixa">
-      </div>
+      
+    <h1>Bem vindo a PSI GAMES</h1>
+    <h2>Aqui você encontarar os melhores jogos!</h2>
 
     </main>
   </div>
@@ -117,7 +95,6 @@ if(isset($_SESSION['idJogador'])){
       <ul>
         <li><a href="index.php">HOME</a></li>
         <li><a href="procurajogo.php">JOGOS</a></li>
-        <li><a href="">INFO</a></li>
       </ul>
     </nav>
 

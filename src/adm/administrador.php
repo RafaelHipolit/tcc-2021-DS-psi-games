@@ -45,78 +45,84 @@ require_once "../server/verificaloginadm.php"; // faca o require_once desse arqu
 
     <main class="container-fluid">
 
+        <h1>Administradores</h1>
+        <hr>
+        <a href="adm-cadastrar1.php" class="btn btn-primary">Cadastrar</a>
+        <a href="adm-listar.php" class="btn btn-primary">Listar todos</a>
+        <a href="adm-consulta.php" class="btn btn-primary">Consultar por nome(alterar/excluir)</a>
+        <a href="adm-alterar1.php" class="btn btn-primary">Alterar(por ID)</a>
+        <a href="adm-exclui1.php" class="btn btn-primary">Excluir(por ID)</a>
+        <br><br><br><br>
 
+        <h1>Jogadores</h1>
+        <hr>
+        <a href="jogador-cadastrar1.php" class="btn btn-primary">Cadastrar</a>
+        <a href="jogador-lista.php" class="btn btn-primary">Listar todos</a>
+        <a href="jogador-consulta.php" class="btn btn-primary">Consultar por nome(alterar/excluir/carrinhos)</a>
+        <a href="jogador-alterar1.php" class="btn btn-primary">Alterar(por ID)</a>
+        <a href="jogador-exclui1.php" class="btn btn-primary">Excluir(por ID)</a>
+        <br><br><br><br>
 
+        <h1>Jogos</h1>
+        <hr>
+        <a href="jogo-cadastrar1.php" class="btn btn-primary">Cadastrar</a>
+        <a href="jogo-listar.php" class="btn btn-primary">Listar todos</a>
+        <a href="jogo-consulta.php" class="btn btn-primary">Consultar por nome(alterar/excluir/Registros de compras)</a>
+        <a href="jogo-alterar1.php" class="btn btn-primary">Alterar(por ID)</a>
+        <a href="jogo-excluir1.php" class="btn btn-primary">Excluir(por ID)</a>
+        <br><br><br><br>
+
+        <h1>Carrinhos</h1>OBS.: Um registro de carrinho é um registo de compra efetuada
+        <hr>
+        <a href="carrinho-lista.php" class="btn btn-primary">Listar todos carrinho</a>
+        <br><br>
+
+        <!--
         <ul>
-            <li><a href="area-adm.php"><button type="button" class="btn btn-secondary btn-lg">admin</button></a></br></li>
-            <li><a href="area-jogador.php"><button type="button" class="btn btn-secondary btn-lg">jogadores</button></a></br></li>
-            <li><a href="area-jogos"><button type="button" class="btn btn-secondary btn-lg">jogos</button></a></br></li>
+
+            <li><a href="#"><button type="button" class="btn btn-secondary btn-lg">
+                        <h1>Admin</h1>
+                    </button></a></br></li>
+
+            <ul>
+                <li><a href="adm-cadastrar1.php">cadastrar</li></a>
+                <li><a href="adm-listar.php">listar</li></a>
+                <li><a href="adm-consulta.php">consultar</li></a>
+                <li><a href="adm-alterar1.php">alterar</li></a>
+                <li><a href="adm-exclui1.php">excluir</li></a>
+            </ul>
+        </ul>
+        <ul>
+            <li><a href="#"><button type="button" class="btn btn-secondary btn-lg">
+                        <h1>Jogadores</h1>
+                    </button></a></br></li>
+            <ul>
+                <li><a href="#">cadastrar</li></a>
+                <li><a href="#">listar</li></a>
+                <li><a href="jogador-consulta.php">consultar</li></a>
+                <li><a href="#">alterar</li></a>
+                <li><a href="#">excluir</li></a>
+            </ul>
+        </ul>
+        <ul>
+            <li><a href="#"><button type="button" class="btn btn-secondary btn-lg">
+                        <h1>Jogos</h1>
+                    </button></a></br></li>
+            <ul>
+                <li><a href="#">cadastrar</li></a>
+                <li><a href="#">listar</li></a>
+                <li><a href="jogo-consulta.php">consultar</li></a>
+                <li><a href="#">alterar</li></a>
+                <li><a href="#">excluir</li></a>
+            </ul>
+
         </ul>
 
+        -->
 
-
-
-        <a href="area-adm.php" class="btn btn-secondary btn-lg">admin</a>
-        <a href="area-jogador.php" class="btn btn-secondary btn-lg">jogadores</a>
-        <a href="area-jogos" class="btn btn-secondary btn-lg">jogos</a>
-
-        <p>Exemplo abaixo - apagar depois</p>
-
-
-        <?php
-
-
-        // EXEMPLO DE COMO FAZER UMA CONEXAO COM O BANCO DE DADOS E EXECUTAR COMANDOS SQL
-
-        require_once "../server/ConexaoBD.php"; // inclui o arquivo que faz a conexão
-
-        $con = new ConexaoDB(); // realiza a conexao - aqui endiante vc esta conectado com o bando de dados pela variavel $con
-
-        $query = "select pk_id_adm, nome, email from administradores;"; // comando SQL para ser executado
-
-        $result = $con->executQuery($query); // executa o comando, SE tiver dados para retonar as informcoes vao para a variavel $result
-        // ATENÇÃO a variavel $result é um array complexo e não podemos pega os resultados acessando ele diretamente - temos que utilizar metodos para pegar os dados que queremos do $result
-
-        //var_dump($result);
-
-        $numLinha = mysqli_num_rows($result); // retorna o numero de linhas da dados 
-
-        // COMO PEGA OS INFORMAÇOES DO $result - forma que normalmente se faz:
-
-        while ($linha = mysqli_fetch_assoc($result)) {
-            echo "ID :" . $linha['pk_id_adm'] . "<br>";
-            echo "Nome :" . $linha['nome'] . "<br>";
-            echo "Email :" . $linha['email'] . "<br>";
-            echo "=======================================<br>";
-        }
-
-        // - forma como EU (rafael) gosto de fazer
-
-        echo "<br><br><br>";
-
-        $result = $con->executQuery($query);
-
-        while ($linha = mysqli_fetch_assoc($result)) {
-            $dados[] = $linha;
-        }
-
-        for ($i = 0; $i < sizeof($dados); $i++) {
-            echo "ID :" . $dados[$i]['pk_id_adm'] . "<br>";
-            echo "Nome :" . $dados[$i]['nome'] . "<br>";
-            echo "Email :" . $dados[$i]['email'] . "<br>";
-            echo "=======================================<br>";
-        }
-
-        // ATENÇÃO!!!!!!!!!
-        // DEPOIS QUE VC NÃO FOR MAIS FAZER REQUERIMENTOS DO BANCO DE DADOS, NÃO ESQUEÇA DE FECHAR A CONEXAO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        $con->fecharConexao(); // fecha a conexao com o banco de dados
-
-
-
-        ?>
 
         <br>
-        <a href="../server/logout.php">DESLOGAR</a>
+        <a class="btn btn-outline-dark" href="../server/logout.php">DESLOGAR</a>
 
     </main>
 

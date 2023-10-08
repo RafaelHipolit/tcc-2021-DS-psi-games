@@ -22,7 +22,7 @@ if(empty($_POST["email"]) || empty($_POST["senha"])){
 $con = new ConexaoDB();
 
 $email = mysqli_real_escape_string($con->getConexao(), $_POST["email"]);
-$senha = mysqli_real_escape_string($con->getConexao(), $_POST["senha"]);
+$senha = mysqli_real_escape_string($con->getConexao(), md5($_POST["senha"]));
 
 $query = "select pk_id_jogador, nome, nickname from jogadores where email = '$email' and senha = '$senha';";
 

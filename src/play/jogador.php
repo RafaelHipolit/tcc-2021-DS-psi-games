@@ -27,7 +27,10 @@ $result = $con->executQuery($query);
 $linha = mysqli_fetch_assoc($result);
 $email = $linha['email'];
 
-
+function dataFormatoBr($data){
+    $dataArray = explode("-",$data);
+    return $dataArray[2]."/".$dataArray[1]."/".$dataArray[0];
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +54,7 @@ $email = $linha['email'];
 
                 <div id="btnmenu-mobile">≡</div>
 
-                <h1 id="logo">| 𝜓 〉GAMES</h1>
+                <img id="logo" src="../img/logo_psiGAMES.png" alt="PSI GAMES">
 
                 <div id="barprocura-pc">
                     <form action="procurajogo.php" method="get" class="formbarproc">
@@ -118,7 +121,7 @@ $email = $linha['email'];
                 <?php
 
                 $id = $_SESSION['idJogador'];
-                $query = "select jogos.nome from jogos
+                $query = "select jogos.nome, jogos.pk_id_jogo from jogos
                 join car_compra_jogo on jogos.pk_id_jogo = car_compra_jogo.fk_id_jogo
                 join carrinhos on car_compra_jogo.fk_id_car = carrinhos.pk_id_car
                 join jogadores on carrinhos.fk_id_jogador = jogadores.pk_id_jogador
@@ -136,7 +139,7 @@ $email = $linha['email'];
                 ?>
                   
                         <div class="jogo">
-                            <img src="../img/img_jogo_modelo.png" alt="">
+                            <img src="../img-games/<?php echo $dados[$i]['pk_id_jogo'] ?>.png" alt="NOT FOUND">
                             <div class="jogo-nome">  <?php echo $dados[$i]['nome']; ?> </div>                       
                         </div>
                         
@@ -171,7 +174,7 @@ $email = $linha['email'];
                 ?>
                     
                             <div class="jogo">
-                                <img src="../img/img_jogo_modelo.png" alt="">
+                                <img src="../img-games/<?php echo $arrayCarrinho[$i]->getId(); ?>.png" alt="NOT FOUND">
                                 <div class="jogo-nome"> <?php echo $arrayCarrinho[$i]->getNome(); ?> </div>
                                 <div class="jogo-preco"> <?php echo $arrayCarrinho[$i]->getPreco(); ?> </div>
                                 <?php $precoTotal += $arrayCarrinho[$i]->getPreco(); ?>
@@ -231,7 +234,7 @@ $email = $linha['email'];
                 $precoTotal = 0;
             ?>      
                     <br>
-                    <div class="car-titulo">Carrinho de <?php echo $dados2[$i]['data_compra']; ?></div>
+                    <div class="car-titulo">Carrinho de <?php echo dataFormatoBr($dados2[$i]['data_compra']); ?></div>
                     <div class="cars-ant">
 
                     <?php
@@ -242,33 +245,42 @@ $email = $linha['email'];
                     where carrinhos.pk_id_car = ".$dados2[$i]['pk_id_car'].";";
                     $result = $con->executQuery($query);
 
-                    
-                    while ($linha = mysqli_fetch_assoc($result)) {
-                        $dados3[] = $linha;
-                    }                                                      
+                    if(mysqli_num_rows($result) != 0){
 
-                    for ($j = 0; $j < sizeof($dados3); $j++) {
-                    # code...
-                    ?>
-                    
-                        <div class="jogo">               
-                            <img src="../img/img_jogo_modelo.png" alt="">
-                            <div class="jogo-nome"> <?php echo $dados3[$j]['nome']; ?> </div>
-                            <div class="jogo-preco"> <?php echo $dados3[$j]['preco']; ?> </div>
-                            <?php $precoTotal += $dados3[$j]['preco']; ?>                        
+                        while ($linha = mysqli_fetch_assoc($result)) {
+                            $dados3[] = $linha;
+                        }                                                      
+    
+                        for ($j = 0; $j < sizeof($dados3); $j++) {
+                        # code...
+                        ?>
+                        
+                            <div class="jogo">               
+                                <img src="../img-games/<?php echo $dados3[$j]['pk_id_jogo'] ?>.png" alt="NOT FOUND">
+                                <div class="jogo-nome"> <?php echo $dados3[$j]['nome']; ?> </div>
+                                <div class="jogo-preco"> <?php echo $dados3[$j]['preco']; ?> </div>
+                                <?php $precoTotal += $dados3[$j]['preco']; ?>                        
+                            </div>
+                                
+                        <?php 
+                        }// fecha FOR
+                        ?>
+    
+    
+    
+                            <div class="finalizar">
+                                Valor total: R$<?php echo $precoTotal ?><br>
+                                Data da compra: <?php echo dataFormatoBr($dados2[$i]['data_compra']); ?>                    
+                            </div>                       
                         </div>
-                            
-                    <?php 
-                    }// fecha FOR
+                    <?php
+                    }else{
+                        echo "<p>O(s) jogo(s) comprados nesse carrinho não existem mais.<br> Para mais informações consulte o atendimento de suporte</p>";
+
+                    }
+                    
                     ?>
-
-
-
-                        <div class="finalizar">
-                            Valor total: R$<?php echo $precoTotal ?><br>
-                            Data da compra: <?php echo $dados2[$i]['data_compra']; ?>                    
-                        </div>                       
-                    </div>  
+                                     
                 
             <?php 
                 unset($dados3);
@@ -295,7 +307,6 @@ $email = $linha['email'];
             <ul>
                 <li><a href="index.php">HOME</a></li>
                 <li><a href="procurajogo.php">JOGOS</a></li>
-                <li><a href="">INFO</a></li>
             </ul>
         </nav>
 

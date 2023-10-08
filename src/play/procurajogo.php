@@ -10,14 +10,16 @@ if (isset($_SESSION['idJogador'])) {
   $jogadorNome = $_SESSION['nickname'];
 }
 
+require_once '../server/ConexaoBD.php';
+$con = new ConexaoDB();
+
 $query = "select pk_id_jogo, nome, preco, sistema from jogos;";
 if(isset($_GET['n'])){
-  $query = "select pk_id_jogo, nome, preco, sistema from jogos where nome like '%".$_GET['n']."%';";
+  $nome = mysqli_real_escape_string($con->getConexao(), $_GET['n']);
+  $query = "select pk_id_jogo, nome, preco, sistema from jogos where nome like '%$nome%';";
 }
 
-require_once '../server/ConexaoBD.php';
 
-$con = new ConexaoDB();
 
 $result = $con->executQuery($query);
 
@@ -44,7 +46,7 @@ $result = $con->executQuery($query);
 
         <div id="btnmenu-mobile">≡</div>
 
-        <h1 id="logo"><img src="../img/psigames_logo.png" alt=""></h1>
+        <img id="logo" src="../img/logo_psiGAMES.png" alt="PSI GAMES">
 
         <div id="barprocura-pc">
           <form action="procurajogo.php" method="get" class="formbarproc">
@@ -90,9 +92,8 @@ $result = $con->executQuery($query);
 
       <nav>
         <ul>
-          <li><a href="">HOME</a></li>
-          <li><a href="../../procurajogo.php">JOGOS</a></li>
-          <li><a href="">INFO</a></li>
+          <li><a href="index.php">HOME</a></li>
+          <li><a href="procurajogo.php">JOGOS</a></li>
         </ul>
       </nav>
 
@@ -113,6 +114,8 @@ $result = $con->executQuery($query);
         </button>
       </div>
 
+      <?php if(isset($_GET['n'])){ echo "<h3 style='margin-left: 5px; '>Resultados pela busca de: ". $_GET['n'] ."</h3>"; } ?>
+
       <?php
 
       if(mysqli_num_rows($result) != 0){
@@ -126,10 +129,15 @@ $result = $con->executQuery($query);
       ?>
 
         <div id="jogo-<?php echo $dados[$i]['pk_id_jogo'] ?>" class="jogo">
-          <img src="../img/img_jogo_modelo.png" alt="NOT FOUND">
+
+          <img src="../img-games/<?php echo $dados[$i]['pk_id_jogo'] ?>.png" alt="NOT FOUND">
+
           <div id="nome"> <?php echo $dados[$i]['nome'] ?> </div>
+
           <div id="preco"> <?php if($dados[$i]['preco'] == 0.0){ echo "Gratuito"; }else { echo $dados[$i]['preco']; } ?> </div>
+
           <div id="system"> Sistema: <?php echo $dados[$i]['sistema'] ?> </div>
+
           <div id="preco-mobile"> <?php if($dados[$i]['preco'] == 0.0){ echo "Gratuito"; }else { echo $dados[$i]['preco']; } ?> </div>
         </div>
 
@@ -137,7 +145,14 @@ $result = $con->executQuery($query);
         }// fecha FOR
       
       }else{
-        echo "Nenhum jogo encontrado com o nome ".$_GET['n'];
+
+          if(isset($_GET['n'])){
+            echo "Nenhum jogo encontrado com o nome ".$_GET['n'];
+          }else{
+              echo "<h1>Desculpa, ainda não estamos vendendo nehum jogo :(</h1>";
+                   
+      }
+        
       }
       ?>
 
@@ -158,7 +173,6 @@ $result = $con->executQuery($query);
       <ul>
         <li><a href="index.php">HOME</a></li>
         <li><a href="procurajogo.php">JOGOS</a></li>
-        <li><a href="">INFO</a></li>
       </ul>
     </nav>
 
